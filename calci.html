@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #calc {
+            width: 400px;
+            height: 600px;
+            border: 20px solid black;
+            padding: 25px;
+            background-color: orange;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            height: 90px;
+            font-size: 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ccc;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            height: 90px;
+            font-size: 48px;
+            margin: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calc">
+        <input type="text" id="res" value="0">
+        <br>
+        <input type="button" value="1" onclick="Solve('1')">
+        <input type="button" value="2" onclick="Solve('2')">
+        <input type="button" value="3" onclick="Solve('3')">
+        <input type="button" value="+" onclick="Solve('+')">
+        <br>
+        <input type="button" value="4" onclick="Solve('4')">
+        <input type="button" value="5" onclick="Solve('5')">
+        <input type="button" value="6" onclick="Solve('6')">
+        <input type="button" value="-" onclick="Solve('-')">
+        <br>
+        <input type="button" value="7" onclick="Solve('7')">
+        <input type="button" value="8" onclick="Solve('8')">
+        <input type="button" value="9" onclick="Solve('9')">
+        <input type="button" value="*" onclick="Solve('*')">
+        <br>
+        <input type="button" value="0" onclick="Solve('0')">
+        <input type="button" value="=" onclick="Result()">
+        <input type="button" value="C" onclick="Clear()">
+        <input type="button" value="/" onclick="Solve('/')">
+    </div>
+    <script>
+        function Solve(val) {
+            var v = document.getElementById('res');
+            v.value += val;
+        }
+        function Result() {
+            var num1 = document.getElementById('res').value;
+            try {
+                var res = eval(num1);
+                document.getElementById('res').value = res;
+            } catch (e) {
+                document.getElementById('res').value = "Error";
+            }
+        }
+        function Clear() {
+            document.getElementById('res').value = "";
+        }
+        function Back() {
+            var v = document.getElementById('res');
+            v.value = v.value.substring(0, v.value.length - 1);
+        }
+    </script>
+</body>
+</html>
