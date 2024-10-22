@@ -1,0 +1,72 @@
+/* Timer.css */
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg);
+  font-family: 'Arial', sans-serif;
+}
+
+.timer-title {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timer-display {
+  font-size: 2.5rem;
+  color:black;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.timer-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timer-button.start {
+  background-color: #27ae60;
+}
+
+.timer-button.start:hover {
+  background-color: #2ecc71;
+}
+
+.timer-button.pause {
+  background-color: #f39c12;
+}
+
+.timer-button.pause:hover {
+  background-color: #e67e22;
+}
+
+.timer-button.reset {
+  background-color: #e74c3c;
+}
+
+.timer-button.reset:hover {
+  background-color: #c0392b;
+}
+
+.timer-button:active {
+  transform: scale(0.98);
+}
